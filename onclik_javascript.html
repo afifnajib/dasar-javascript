@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>?</title>
+	<style type="text/css">
+		.hide {
+			display: none;
+		}
+		.jumbotron {
+			background-color: darkblue;
+			color: #fff;
+			width: 84.5%;
+			padding: 100px;
+			text-align: center;
+			margin: 0;
+			font-size: 25px;
+		}
+		.show {
+			display: block;
+		}
+	</style>
+</head>
+<body>
+
+	<button onclick="hide()">hide</button>
+	<button onclick="show()">show</button>
+
+	<p id="selamat" class="jumbotron">
+		selamat belajar
+	</p>
+
+	<script type="text/javascript">
+		function hide () {
+			var a = document.getElementById('selamat');
+			a.classList.add('hide');
+		}
+
+		function show() {
+			var shw= document.getElementById('selamat');
+			shw.classList.remove('hide');
+		}
+	</script>
+
+
+</body>
+</html>

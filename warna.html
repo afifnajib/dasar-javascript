@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body bgcolor="darkblue">
+		<p class="paragraf">
+		Lorem ipsum dolor sit amet consectetur adipisicing elit.
+		Quo nihil dolores aliquam beatae dicta non distinctio rem,
+		est culpa tenetur odit maiores earum eius voluptatum consectetur laboriosam iure expedita.
+		Natus.
+		</p>
+		<p class="paragraf">
+		Lorem ipsum dolor sit amet consectetur adipisicing elit.
+		Quo nihil dolores aliquam beatae dicta non distinctio rem,
+		est culpa tenetur odit maiores earum eius voluptatum consectetur laboriosam iure expedita.
+		Natus.
+		</p>
+		<p class="paragraf">
+		Lorem ipsum dolor sit amet consectetur adipisicing elit.
+		Quo nihil dolores aliquam beatae dicta non distinctio rem,
+		est culpa tenetur odit maiores earum eius voluptatum consectetur laboriosam iure expedita.
+		Natus.
+		</p>
+
+		<script type="text/javascript">
+		setInterval(function() {
+			var paragraf = document.getElementsByClassName("paragraf");
+			paragraf[1].style.fontSize = '32px';
+			paragraf[1].style.color="#fff";
+			paragraf[2].style.fontSize = '32px';
+			paragraf[2].style.color="grey";
+
+			setTimeout(function() {
+				paragraf[1].style.fontSize = '20px';
+				paragraf[1].style.color="grey";
+				paragraf[2].style.fontSize = '20px';
+				paragraf[2].style.color="#fff";
+			},500) 
+		},1000); 
+	</script>
+
+</body>
+</html>

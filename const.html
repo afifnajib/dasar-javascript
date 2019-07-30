@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		const KEY=123
+			KEY = 456 //=> TypeError: Assignment to constant variable.
+			const KEY=123
+			var KEY = 456 //=> TypeError: Assignment to constant variable.
+	</script>
+
+	<script type="text/javascript">
+		const obj = { id:1, name:'jhon'}
+			obj.location="medan"
+			console.log(obj) //=> { id:1, name:'jhon',location:'medan'}
+			obj={} //=> TypeError: Assignment to constant variable.
+			const arr=[1,2,3,4]
+			arr.push(5)
+			console.log(arr) //=> [1,2,3,4,5]
+			arr=[] //=> TypeError: Assignment to constant variable.
+	</script>
+
+</body>
+</html>

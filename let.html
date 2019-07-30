@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		//block scope
+		let b=2
+		if (true){
+			let b=3
+		}
+			console.log(b) //=> 2
+	</script>
+
+	<script type="text/javascript">
+		//Hoisting
+		x=10
+		let x
+			console.log(x) //=> ReferenceError: x is not defined
+	</script>
+
+</body>
+</html>

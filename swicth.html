@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<h2>Silahkan Masukkan Nilai Ujian Kamu!!</h2>
+	<script type="text/javascript">
+		var nilai = prompt("Silahkan Masukkan Nomor (1-100)");
+        var grade= "";
+        
+        switch(true){
+            case nilai >= 99:
+                grade = "A+";
+                break;
+            case nilai >= 90:
+                grade = "A";
+                break;
+            case nilai >= 70:
+                grade = "B+";
+                break;
+            case nilai >= 60:
+                grade = "B";
+                break;
+            case nilai >= 50:
+                grade = "C";
+                break;
+            default:
+        }
+
+        if(grade === ""){
+            document.write("Yah..kasian.. Nilaimu D");
+        } else {
+            document.write("<h3>Selamat kamu mendapatkan " + grade + "</h3>");
+        }
+	</script>
+
+</body>
+</html>
