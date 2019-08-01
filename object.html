@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>?</title>
+</head>
+<body>
+	<h2 align="center">Penggunaan Object,Property,dan Method</h2>
+	<p style="text-align: center;" id="tampilan"></p>
+	<script type="text/javascript">
+		var hewan = {
+			object: "Hewan",
+			property1 : "Orang Utan",
+			property2 : "rambut merah kecoklatan",
+			method1: "Berjalan,",
+			method2: "Berayun"
+		};
+
+		document.getElementById("tampilan").innerHTML = "Object: " +
+		hewan.object +"<br>"+ "Property: - " + hewan.property1 +"<br>" + "-      Tubuh orangutan diselimuti " + hewan.property2 +"<br>"+ "Method: - " + hewan.method1 + "Tetapi jarang digunakan" +"<br>"+ "- Biasanya mereka " + hewan.method2 + " atau yang biasa dipanggil"+ "<i> brachiating";
+	</script>
+
+</body>
+</html>
