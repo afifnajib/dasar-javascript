@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container mt-5">
+	<button onclick="myFunction()"><a href="#" class="fa fa-plus"> Tambah</a></button>
+	<button onclick="myFunctions()"><a href="#" class="fa fa-trash"> Hapus</a></button>
+	<h3 style="font-weight: bold;">Contoh</h3>
+	<p id="demo"></p>
+</div>
+
+	<script>
+		var i = ["RPL(Rekayasa Perangkat Lunak)",
+				 "TKJ(Teknik Komputer Jaringan)", 
+				 "Multimedia"
+				 ];
+		var h = []
+		document.getElementById("demo").innerHTML = i;
+
+		function myFunction() {
+			var x = prompt("Masukkan Jurusan Anda :");
+			if(x){
+			h.push(x);
+			document.getElementById("demo").innerHTML = i + "<br>" + h;
+			alert("Selamat Anda Berhasil Mendaftar");
+			}
+		}
+		function myFunctions() {
+			h.pop("");
+			document.getElementById("demo").innerHTML = i;
+		}
+	</script>
+</body>
+</html>
