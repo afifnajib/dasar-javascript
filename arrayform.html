@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+</head>
+<body>
+
+    <div class="container mt-5">
+            <div class="col col-md-6">
+                <h3>Form Tambah Hapus<i class="fa fa-file text-primary"></i></h3>
+                <form action="" onsubmit="event.preventDefault();onFormSubmit();">
+                        <input type="text" class="form-control" id="nama_anda" placeholder="Masukkan Nama Anda">
+                        <br>
+                        <input type="number" class="form-control" id="kelas_anda" placeholder="Masukkan Kelas Anda">
+                        <br>
+                    <button type="submit" class="btn btn-success btn-block"><i class="fa fa-check-circle"></i> Sumbit</button>
+                </form>
+            </div>
+            <div class="mt-5">
+                <h3>Daftar Nama<i class="fa fa-list-alt text-info"></i></h3>
+                <table class="table" id="daftarTabel">
+                    <thead>
+                        <tr>
+                            <th>Nama</th>
+                            <th>Kelas</th>
+                            <th>Opsi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="daftarList">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+        
+    <script>
+        var namaObjek = [
+            {
+                nama: 'Andre',
+                kelas: 'XII'
+            },
+            {
+                nama: 'Arfito',
+                kelas: 'XII'
+            }
+        ]
+        var selectedRow = null
+
+        for (let i = 0; i < namaObjek.length; i++) {
+            daftarList(namaObjek[i])
+            
+        }
+
+        function daftarList(data) {
+            let table = document.getElementById('daftarTabel').getElementsByTagName('tbody')[0]
+            let newRow = table.insertRow(table.length)
+            newRow.insertCell(0).innerHTML = data.nama
+            newRow.insertCell(1).innerHTML = data.kelas
+            newRow.insertCell(2).innerHTML = '<a href="#" class="text-danger" title="delete" onclick="deleteDaftar(this)"><i class="fa fa-trash"></i></a>'
+        }
+        function updateRecord(formData) {
+            selectedRow.cells[0].innerHTML = formData.nama
+            selectedRow.cells[1].innerHTML = formData.jenis
+        }
+        function deleteDaftar(td) {
+            if (confirm('Apakah Anda Yakin ?')) {
+                row = td.parentElement.parentElement
+                document.getElementById('daftarTabel').deleteRow(row.rowIndex)
+                resetForm()
+            }
+        }
+
+        function onFormSubmit() {
+            let formData = readFormData()
+            if (selectedRow === null) {
+                daftarList(formData)
+            } else {
+                updateRecord(formData)
+            }
+            resetForm()
+        }
+        function readFormData() {
+            let form = {}
+            form['nama'] = document.getElementById('nama_anda').value
+            form['kelas'] = document.getElementById('kelas_anda').value
+            return form
+        }
+        function resetForm() {
+            nama_anda = ''
+            kelas_anda = ''
+        }
+
+        
+    </script>
+    
+</body>
+</html>
