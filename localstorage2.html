@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Learning JavaScript</title>
+    <style type="text/css">
+        .hide {
+            display: none !important;
+        }
+    </style>
+</head>
+<body>
+    <form id="login-form" class=""> 
+        <input id="nama" type="text" placeholder="Masukkan Username" value=""/>
+        <input id="pass" type="password" placeholder="Enter Password" value=""/>
+        <input id="login_btn" type="submit" value="Login" onClick="check()"/> 
+    </form>
+
+    <form id="login-form2" class="hide"> 
+        <input id="userNama" type="text" placeholder="Masukkan Nama" value=""/>
+        <input id="userKelas" type="text" placeholder="Masukkan Kelas" value=""/>
+        <input id="login_btn" type="submit" value="Input" onClick="check2()"/> 
+    </form>
+    <table width = "500" border="1" id="tabel">
+        
+    </table>
+
+
+</body>
+<script type="text/javascript">
+
+    console.log(localStorage.nama)
+
+        if (localStorage.nama !== undefined && localStorage.pass !== undefined) {
+            document.getElementById('login-form').classList.add('hide')
+            document.getElementById('login-form2').classList.remove('hide')
+           
+        } else {
+            alert('hai')
+            document.getElementById('login-form').classList.remove('hide')
+            document.getElementById('login-form2').classList.add('hide')
+        }
+function store(nama, pass) {
+    localStorage.setItem('nama', nama);
+    localStorage.setItem('pass', pass);
+    return true
+}
+function check() {
+
+    var nama = document.getElementById('nama');
+    var pass = document.getElementById('pass');
+    if (nama.value === 'admin' && pass.value === 'admin') {
+        store(nama.value, pass.value)
+        if (localStorage.nama !== null && localStorage.pass !== null) {
+            document.getElementById('login-form').classList.add('hide')
+
+        } else {
+            alert('kosong')
+        }
+    } else {
+        alert('salah')
+    }
+
+}
+function store2() {
+    localStorage.setItem('userNama', userNama.value);
+    localStorage.setItem('userKelas', userKelas.value);
+}
+
+function check2() {
+
+    var userNama = document.getElementById('userNama');
+    var userKelas = document.getElementById('userKelas');
+
+    if (userNama.value !== null && userKelas.value !== null) {
+        store2(userNama.value, userKelas.value)
+        if (localStorage.userNama !== null && localStorage.userKelas !== null) {
+            document.write("<h2>TABEL DATA SISWA</h2>");
+            document.write("<table width = '500' border='1'>");
+            document.write("<tr><th>Nama: "+ localStorage.getItem('userNama') +"</th></tr>");
+            document.write("<tr><th>Kelas: "+localStorage.getItem('userKelas') +"</th></tr>");
+            document.write("</table>");
+
+        } else {
+            alert('data tidak boleh kosong')
+        }
+    } else {
+        alert('salah')
+    }
+}
+
+</script>
+</html>
