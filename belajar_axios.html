@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.min.js"></script>
+    <script>
+
+// Make a request for a user with a given ID
+axios.get('https://jsonplaceholder.typicode.com/posts')
+.then(function (response) {
+    // handle success
+   
+    let data = response.data
+
+    document.write("<table width = '500' border='1' align = 'center'>")
+    document.write('<tr><th>' + 'User Id' + '</th></tr>')
+    document.write('<td><ul>')
+    for (let i = 0; i <= 3; i++) {
+        document.write('<li>' + data[i].id+ '</li>')
+    }
+    document.write('</ul></td>')
+
+    document.write('<tr><th>' + 'Id' + '</tr></th>')
+    document.write('<td><ul>')
+    for (let i = 0; i <= 3; i++) {
+        document.write('<li>' + data[i].userId + '</li>')
+    }
+    document.write('</ul></td>')
+
+    document.write('<tr><th>' + 'Title' + '</tr></th>')
+    document.write('<td><ul>')
+    for (let i = 0; i <= 3; i++) {
+        document.write('<li>' + data[i].title + '</li>')
+    }
+    document.write('</ul></td>')
+
+    document.write('<tr><th>' + 'Body' + '</tr></th>')
+    document.write('<td><ul>')
+    for (let i = 0; i <= 3; i++) {
+        document.write('<li>' + data[i].body + '</li>')
+    }
+    document.write('</ul></td>')
+    document.write('</table>')
+})
+.catch(function (error) {
+    // handle error
+    alert(error);
+})
+</script>
+</body>
+</html>
